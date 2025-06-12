@@ -1,0 +1,27 @@
+{
+    "name": "hanafalah/puskesmas-asset",
+    "autoload": {
+        "psr-4": {
+            "Hanafalah\\PuskesmasAsset\\": "src/"
+        },
+        "files":[
+            "src/helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "hamzah nur al falah",
+            "email": "hamzahnafalah@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Hanafalah\\PuskesmasAsset\\PuskesmasAssetServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "hanafalah/laravel-support": "1.x-dev as 1.0"
+    }
+}
