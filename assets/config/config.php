@@ -8,10 +8,6 @@ use Hanafalah\PuskesmasAsset\{
 
 return [
     "namespace"     => "Hanafalah\PuskesmasAsset",
-    "paths"         => [
-        "local_path"   => null,
-        "base_path"    => __DIR__.'\\..\\'
-    ],
     'app' => [
         'contracts' => [
         ],
