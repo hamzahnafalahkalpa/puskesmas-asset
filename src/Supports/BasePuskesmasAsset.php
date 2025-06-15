@@ -6,7 +6,7 @@ use Hanafalah\LaravelSupport\Supports\PackageManagement;
 
 class BasePuskesmasAsset extends PackageManagement
 {
-    /** @var array */
+    protected $__config_name = 'puseksmas-asset';
     protected $__puskesmas_asset_config = [];
 
     /**
@@ -18,6 +18,6 @@ class BasePuskesmasAsset extends PackageManagement
      */
     public function __construct()
     {
-        $this->setConfig('puskesmas_asset', $this->__puskesmas_asset_config);
+        $this->setConfig($this->__config_name, $this->__puskesmas_asset_config);
     }
 }
