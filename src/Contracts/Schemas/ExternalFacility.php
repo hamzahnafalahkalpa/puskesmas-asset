@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @see \Hanafalah\PuskesmasAsset\Schemas\ExternalFacility
  * @method mixed export(string $type)
+ * @method self setParamLogic(string $logic, bool $search_value = false, ?array $optionals = [])
  * @method self conditionals(mixed $conditionals)
  * @method array updateExternalFacility(?ExternalFacilityData $external_facility_dto = null)
  * @method Model prepareUpdateExternalFacility(ExternalFacilityData $external_facility_dto)

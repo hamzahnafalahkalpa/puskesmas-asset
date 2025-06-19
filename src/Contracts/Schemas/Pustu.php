@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @see \Hanafalah\PuskesmasAsset\Schemas\Pustu
+ * @method self setParamLogic(string $logic, bool $search_value = false, ?array $optionals = [])
  * @method self conditionals(mixed $conditionals)
  * @method array updatePustu(?PustuData $pustu_dto = null)
  * @method Model prepareUpdatePustu(PustuData $pustu_dto)
