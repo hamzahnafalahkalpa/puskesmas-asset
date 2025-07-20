@@ -10,7 +10,7 @@ class ExternalFacility extends Pustu implements ContractsExternalFacility
 {
     protected string $__entity = 'ExternalFacility';
     protected $__config_name = 'puseksmas-asset';
-    public static $external_facility_model;
+    public $external_facility_model;
 
     protected array $__cache = [
         'index' => [
@@ -24,6 +24,6 @@ class ExternalFacility extends Pustu implements ContractsExternalFacility
         $external_facility = parent::prepareStorePustu($external_facility_dto);
         $this->fillingProps($external_facility, $external_facility_dto->props);
         $external_facility->save();
-        return static::$external_facility_model = $external_facility;
+        return $this->external_facility_model = $external_facility;
     }
 }

@@ -10,7 +10,7 @@ use Hanafalah\PuskesmasAsset\Contracts\Data\PustuData;
 class Pustu extends Building implements ContractsPustu
 {
     protected string $__entity = 'Pustu';
-    public static $pustu_model;
+    public $pustu_model;
 
     protected array $__cache = [
         'index' => [
@@ -36,7 +36,7 @@ class Pustu extends Building implements ContractsPustu
 
         $this->fillingProps($pustu, $pustu_dto->props);
         $pustu->save();
-        return static::$pustu_model = $pustu;
+        return $this->pustu_model = $pustu;
     }
 
     protected function addingAddress(&$dto,$model){

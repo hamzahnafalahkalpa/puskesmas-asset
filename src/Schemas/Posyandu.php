@@ -10,7 +10,7 @@ class Posyandu extends Pustu implements ContractsPosyandu
 {
     protected string $__entity = 'Posyandu';
     protected $__config_name = 'puseksmas-asset';
-    public static $posyandu_model;
+    public $posyandu_model;
 
     protected array $__cache = [
         'index' => [
@@ -24,6 +24,6 @@ class Posyandu extends Pustu implements ContractsPosyandu
         $posyandu = parent::prepareStorePustu($posyandu_dto);
         $this->fillingProps($posyandu, $posyandu_dto->props);
         $posyandu->save();
-        return static::$posyandu_model = $posyandu;
+        return $this->posyandu_model = $posyandu;
     }
 }

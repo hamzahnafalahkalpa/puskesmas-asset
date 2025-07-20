@@ -13,7 +13,7 @@ use Hanafalah\PuskesmasAsset\Contracts\Data\SurveillanceData;
 class Surveillance extends BasePuskesmasAsset implements ContractsSurveillance
 {
     protected string $__entity = 'Surveillance';
-    public static $surveillance_model;
+    public $surveillance_model;
     //protected mixed $__order_by_created_at = false; //asc, desc, false
 
     protected array $__cache = [
@@ -40,6 +40,6 @@ class Surveillance extends BasePuskesmasAsset implements ContractsSurveillance
         $surveillance = $this->usingEntity()->updateOrCreate(...$create);
         $this->fillingProps($surveillance,$surveillance_dto->props);
         $surveillance->save();
-        return static::$surveillance_model = $surveillance;
+        return $this->surveillance_model = $surveillance;
     }
 }
