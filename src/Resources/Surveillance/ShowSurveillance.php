@@ -2,8 +2,6 @@
 
 namespace Hanafalah\PuskesmasAsset\Resources\Surveillance;
 
-use Hanafalah\ModulePatient\Resources\VisitPatient\ShowVisitPatient;
-
 class ShowSurveillance extends ViewSurveillance
 {
   /**
@@ -14,9 +12,12 @@ class ShowSurveillance extends ViewSurveillance
    */
   public function toArray(\Illuminate\Http\Request $request): array
   {
-    $arr = [];
-    $show = $this->resolveNow(new ShowVisitPatient($this));
-    $arr = $this->mergeArray(parent::toArray($request),$show,$arr);
+    $arr = [
+      'visit_patient' => $this->relationValidation('visitPatient',function(){
+        return $this->visitPatient->toShowApi()->resolve();
+      },$this->prop_visit_patient)
+    ];
+    $arr = $this->mergeArray(parent::toArray($request),$arr);
     return $arr;
-  }
+  } 
 }

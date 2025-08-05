@@ -2,9 +2,9 @@
 
 namespace Hanafalah\PuskesmasAsset\Resources\Surveillance;
 
-use Hanafalah\ModulePatient\Resources\VisitPatient\ViewVisitPatient;
+use Hanafalah\LaravelSupport\Resources\ApiResource;
 
-class ViewSurveillance extends ViewVisitPatient
+class ViewSurveillance extends ApiResource
 {
   /**
    * Transform the resource into an array.
@@ -14,8 +14,16 @@ class ViewSurveillance extends ViewVisitPatient
    */
   public function toArray(\Illuminate\Http\Request $request): array
   {
-    $arr = [];
-    $arr = $this->mergeArray(parent::toArray($request),$arr);
+    $arr = [
+      'id'              => $this->id,
+      'name'            => $this->name,
+      'reference_type'  => $this->reference_type,
+      'reference_id'    => $this->reference_id,
+      'subject_type'    => $this->subject_type,
+      'subject_id'      => $this->subject_id,
+      'subject'         => $this->prop_subject,
+      'visit_patient'   => $this->prop_visit_patient
+    ];
     return $arr;
   }
 }

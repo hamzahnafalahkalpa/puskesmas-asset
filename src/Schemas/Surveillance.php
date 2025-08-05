@@ -28,16 +28,28 @@ class Surveillance extends BasePuskesmasAsset implements ContractsSurveillance
         $add = [
             'name' => $surveillance_dto->name
         ];
-        $guard  = ['id' => $surveillance_dto->id];
+        if (isset($surveillance_dto->id)){
+            $guard = ['id' => $surveillance_dto->id];
+        }else{
+            $guard = [
+                'reference_type' => $surveillance_dto->reference_type,
+                'reference_id' => $surveillance_dto->reference_id,
+                'subject_type' => $surveillance_dto->subject_type,
+                'subject_id' => $surveillance_dto->subject_id
+            ];
+        }
         $create = [$guard, $add];
-        // if (isset($surveillance_dto->id)){
-        //     $guard  = ['id' => $surveillance_dto->id];
-        //     $create = [$guard, $add];
-        // }else{
-        //     $create = [$add];
-        // }
-
         $surveillance = $this->usingEntity()->updateOrCreate(...$create);
+
+        if (isset($surveillance_dto->visit_patient)){
+            $visit_patient_dto = &$surveillance_dto->visit_patient;
+            $visit_patient_dto->reference_type = $surveillance->getMorphClass();
+            $visit_patient_dto->reference_id = $surveillance->getKey();
+            $visit_patient = $this->schemaContract('visit_patient')->prepareStoreVisitPatient($visit_patient_dto);
+            $surveillance_dto->props['prop_visit_patient'] = $listen_data = $visit_patient->toViewApi()->resolve();
+            $surveillance->listenProp($visit_patient,array_keys($listen_data));
+        }
+
         $this->fillingProps($surveillance,$surveillance_dto->props);
         $surveillance->save();
         return $this->surveillance_model = $surveillance;
