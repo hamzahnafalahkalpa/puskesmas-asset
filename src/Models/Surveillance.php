@@ -55,14 +55,16 @@ class Surveillance extends BaseModel
     public function showUsingRelation(): array{
         return [
             'reference', 
-            'subject'
+            'subject',
+            'visitPatients'
         ];
     }
 
     public function getViewResource(){return ViewSurveillance::class;}
     public function getShowResource(){return ShowSurveillance::class;}
 
-    public function visitPatient(){return $this->morphOneMOdel('VisitPatient','reference');}
+    public function visitPatient(){return $this->morphOneModel('VisitPatient','reference');}
+    public function visitPatients(){return $this->morphManyModel('VisitPatient','reference');}
     public function reference(){return $this->morphTo();}
     public function subject(){return $this->morphTo();}   
 }

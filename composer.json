@@ -22,6 +22,7 @@
         }
     },
     "require": {
-        "hanafalah/laravel-support": "dev-main"
+        "hanafalah/laravel-support": "dev-main",
+        "hanafalah/module-patient": "dev-main"
     }
 }
