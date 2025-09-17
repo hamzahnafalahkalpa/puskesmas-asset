@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             //ADD YOUR SEEDER HERE
+            ServiceClusterSeeder::class
         ]);
     }
 }
