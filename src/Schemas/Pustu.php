@@ -4,6 +4,7 @@ namespace Hanafalah\PuskesmasAsset\Schemas;
 
 use Hanafalah\ModuleWarehouse\Schemas\Building;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Hanafalah\PuskesmasAsset\Contracts\Schemas\Pustu as ContractsPustu;
 use Hanafalah\PuskesmasAsset\Contracts\Data\PustuData;
 
