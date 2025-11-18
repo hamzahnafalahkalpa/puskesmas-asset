@@ -49,4 +49,8 @@ class Pustu extends Building implements ContractsPustu
             unset($address->props);
         }
     }
+
+    public function pustu(mixed $conditionals = null): Builder{
+        return $this->building($conditionals);
+    }
 }

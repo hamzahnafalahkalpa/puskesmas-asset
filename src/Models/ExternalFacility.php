@@ -8,17 +8,17 @@ use Hanafalah\PuskesmasAsset\Resources\ExternalFacility\{
 
 class ExternalFacility extends Pustu
 {
-    protected $table = 'buildings';
+    protected $table = 'unicodes';
 
-    protected static function booted(): void{
-        parent::booted();
-        static::addGlobalScope('flag',function($query){
-            $query->flagIn('ExternalFacility');
-        });
-        static::creating(function($query){
-            $query->flag = 'ExternalFacility';
-        });
-    }
+    // protected static function booted(): void{
+    //     parent::booted();
+    //     static::addGlobalScope('flag',function($query){
+    //         $query->flagIn('ExternalFacility');
+    //     });
+    //     static::creating(function($query){
+    //         $query->flag = 'ExternalFacility';
+    //     });
+    // }
 
     public function getViewResource(){
         return ViewExternalFacility::class;

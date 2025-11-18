@@ -26,4 +26,8 @@ class Posyandu extends Pustu implements ContractsPosyandu
         $posyandu->save();
         return $this->posyandu_model = $posyandu;
     }
+
+    public function posyandu(mixed $conditionals = null): Builder{
+        return $this->pustu($conditionals);
+    }
 }

@@ -30,4 +30,5 @@ use Illuminate\Database\Eloquent\Model;
 interface Pustu extends Building
 {
     public function prepareStorePustu(PustuData $pustu_dto): Model;
+    public function pustu(mixed $conditionals = null): Builder;
 }

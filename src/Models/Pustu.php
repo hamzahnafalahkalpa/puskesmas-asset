@@ -9,17 +9,17 @@ use Hanafalah\PuskesmasAsset\Resources\Pustu\{
 
 class Pustu extends Building
 {   
-    protected $table = 'buildings';
+    protected $table = 'unicodes';
 
-    protected static function booted(): void{
-        parent::booted();
-        static::addGlobalScope('flag',function($query){
-            $query->flagIn('Pustu');
-        });
-        static::creating(function($query){
-            $query->flag = 'Pustu';
-        });
-    }
+    // protected static function booted(): void{
+    //     parent::booted();
+    //     static::addGlobalScope('flag',function($query){
+    //         $query->flagIn('Pustu');
+    //     });
+    //     static::creating(function($query){
+    //         $query->flag = 'Pustu';
+    //     });
+    // }
 
     public function getViewResource(){
         return ViewPustu::class;

@@ -28,7 +28,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method Builder posyandu(mixed $conditionals = null);
  */
 
-interface Posyandu
+interface Posyandu extends Pustu
 {
     public function prepareStorePosyandu(PosyanduData $posyandu_dto): Model;
+    public function posyandu(mixed $conditionals = null): Builder;
 }
