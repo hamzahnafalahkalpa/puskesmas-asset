@@ -8,17 +8,17 @@ use Hanafalah\PuskesmasAsset\Resources\Posyandu\{
 
 class Posyandu extends Pustu
 {
-    protected $table = 'buildings';
+    protected $table = 'unicodes';
 
-    protected static function booted(): void{
-        parent::booted();
-        static::addGlobalScope('flag',function($query){
-            $query->flagIn('Posyandu');
-        });
-        static::creating(function($query){
-            $query->flag = 'Posyandu';
-        });
-    }
+    // protected static function booted(): void{
+    //     parent::booted();
+    //     static::addGlobalScope('flag',function($query){
+    //         $query->flagIn('Posyandu');
+    //     });
+    //     static::creating(function($query){
+    //         $query->flag = 'Posyandu';
+    //     });
+    // }
 
     public function getViewResource(){
         return ViewPosyandu::class;

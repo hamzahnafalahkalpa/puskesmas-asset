@@ -3,7 +3,6 @@
 namespace Hanafalah\PuskesmasAsset\Schemas;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
 use Hanafalah\PuskesmasAsset\Contracts\Schemas\ExternalFacility as ContractsExternalFacility;
 use Hanafalah\PuskesmasAsset\Contracts\Data\ExternalFacilityData;
 
