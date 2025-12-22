@@ -11,16 +11,6 @@ class Pustu extends Building
 {   
     protected $table = 'unicodes';
 
-    // protected static function booted(): void{
-    //     parent::booted();
-    //     static::addGlobalScope('flag',function($query){
-    //         $query->flagIn('Pustu');
-    //     });
-    //     static::creating(function($query){
-    //         $query->flag = 'Pustu';
-    //     });
-    // }
-
     public function getViewResource(){
         return ViewPustu::class;
     }
@@ -28,8 +18,4 @@ class Pustu extends Building
     public function getShowResource(){
         return ShowPustu::class;
     }
-
-    
-
-    
 }

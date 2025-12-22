@@ -5,6 +5,7 @@ namespace Hanafalah\PuskesmasAsset\Schemas;
 use Illuminate\Database\Eloquent\Model;
 use Hanafalah\PuskesmasAsset\Contracts\Schemas\ExternalFacility as ContractsExternalFacility;
 use Hanafalah\PuskesmasAsset\Contracts\Data\ExternalFacilityData;
+use Illuminate\Database\Eloquent\Builder;
 
 class ExternalFacility extends Pustu implements ContractsExternalFacility
 {
@@ -25,5 +26,9 @@ class ExternalFacility extends Pustu implements ContractsExternalFacility
         $this->fillingProps($external_facility, $external_facility_dto->props);
         $external_facility->save();
         return $this->external_facility_model = $external_facility;
+    }
+
+    public function externalFacility(mixed $conditionals = null): Builder{
+        return $this->pustu($conditionals);
     }
 }
