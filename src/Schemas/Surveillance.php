@@ -33,9 +33,9 @@ class Surveillance extends BasePuskesmasAsset implements ContractsSurveillance
         }else{
             $guard = [
                 'reference_type' => $surveillance_dto->reference_type,
-                'reference_id' => $surveillance_dto->reference_id,
+                'reference_id' => (string) $surveillance_dto->reference_id,
                 'subject_type' => $surveillance_dto->subject_type,
-                'subject_id' => $surveillance_dto->subject_id
+                'subject_id' => (string) $surveillance_dto->subject_id
             ];
         }
         $create = [$guard, $add];
